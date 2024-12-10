@@ -62,7 +62,7 @@ public class Player_Muwer : MonoBehaviour
         cam.transform.position = Vector3.Lerp(cam.transform.position, transform.position + rb.velocity, Time.deltaTime);
         if (muwe != Vector3.zero)
         {
-            anim.SetFloat("Speed", rb.velocity.magnitude/3);
+            anim.SetFloat("Speed", rb.velocity.magnitude/2);
             bodey.rotation = Quaternion.Lerp(bodey.rotation, Quaternion.LookRotation(muwe),speed * Time.deltaTime);
             rb.AddForce(transform.forward * speed);
             anim.SetBool("Run", true);
