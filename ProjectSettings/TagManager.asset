@@ -8,6 +8,8 @@ TagManager:
   - Platform
   - TNT
   - Enemy
+  - Neytral
+  - Kitty
   layers:
   - Default
   - TransparentFX
@@ -15,7 +17,7 @@ TagManager:
   - Grund
   - Water
   - UI
-  - 
+  - Kitty
   - 
   - 
   - 

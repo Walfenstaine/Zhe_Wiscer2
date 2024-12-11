@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class Player_Muwer : MonoBehaviour
 {
+    public List<Kitti> kitis;
     public float speed, helse;
     public Vector3 muwe;
     public Transform bodey, cam;
@@ -48,7 +48,7 @@ public class Player_Muwer : MonoBehaviour
     {
         if (timer < Time.time)
         {
-            timer = Time.time + 0.3f;
+            timer = Time.time + 0.7f;
             anim.SetTrigger("Kik");
         }
         else 
@@ -56,7 +56,15 @@ public class Player_Muwer : MonoBehaviour
             anim.SetTrigger("Kik2");
         }
     }
-
+    public void AddKitti(Kitti kitti) 
+    {
+        kitis.Add(kitti);
+        kitis[0].target = transform;
+        for (int i = 1; i < kitis.Count; i++)
+        {
+            kitis[i].target = kitis[i - 1].transform;
+        }
+    }
     private void FixedUpdate()
     {
         cam.transform.position = Vector3.Lerp(cam.transform.position, transform.position + rb.velocity, Time.deltaTime);
@@ -71,6 +79,15 @@ public class Player_Muwer : MonoBehaviour
         {
             anim.SetBool("Run", false);
         }
-        
+        if (kitis.Count > 0) 
+        {
+            for (int i = 0; i < kitis.Count; i++)
+            {
+                if (kitis[i] == null)
+                {
+                    kitis.RemoveAt(i);
+                }
+            }
+        }
     }
 }

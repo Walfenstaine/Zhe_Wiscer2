@@ -7,6 +7,7 @@ using UnityEngine.AI;
 using YG;
 public class Enemy : MonoBehaviour
 {
+    public Transform target, point;
     public GameObject[] loot;
     public NavMeshAgent agent;
     public Image helser;
@@ -39,18 +40,22 @@ public class Enemy : MonoBehaviour
             }
         }
     }
-
+    public void OnPoint(Transform t)
+    {
+        point = t;
+    }
     private void FixedUpdate()
     {
-        if (Vector3.Distance(Player_Muwer.rid.transform.position, transform.position) >= 0.3)
+        if (target != null)
         {
-            agent.isStopped = false;
+            agent.destination = target.position;
         }
-        else { agent.isStopped = true; }
-        if (Player_Muwer.rid)
+        else 
         {
-            agent.destination = Player_Muwer.rid.transform.position;
+            if (point != null) 
+            {
+                agent.destination = point.position;
+            }
         }
-        
     }
 }
