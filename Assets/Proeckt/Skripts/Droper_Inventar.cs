@@ -75,15 +75,15 @@ public class Droper_Inventar : MonoBehaviour
         {
             if (YandexGame.savesData.inv[0] > 0)
             {
-                if (YandexGame.savesData.svord_Helse < 100)
+                if (Sword.rid.svordHelse < 100)
                 {
-                    if (YandexGame.savesData.svord_Helse < 60)
+                    if (Sword.rid.svordHelse < 60)
                     {
-                        YandexGame.savesData.svord_Helse += 40;
+                        Sword.rid.svordHelse += 40;
                     }
                     else
                     {
-                        YandexGame.savesData.svord_Helse = 100;
+                        Sword.rid.svordHelse = 100;
                     }
                     YandexGame.savesData.inv[0] -= 1;
                 }
@@ -96,15 +96,21 @@ public class Droper_Inventar : MonoBehaviour
     public void Torg()
     {
         Interface.rid.SaveGame();
-        if (torg) 
+        if (torg)
         {
-            if (YandexGame.savesData.inv[2] > 0) 
+            if (YandexGame.savesData.coins >= 10)
             {
-                int coin = Random.Range(0, 5);
-                YandexGame.savesData.inv[2] -= 1;
-                YandexGame.savesData.coins += coin;
+                YandexGame.savesData.inv[2] += 1;
+                YandexGame.savesData.coins -= 10;
             }
-                
+        }
+        else
+        {
+            if (YandexGame.savesData.inv[2] > 0)
+            {
+                Player_Muwer.rid.Invise();
+                YandexGame.savesData.inv[2] -= 1;
+            }
         }
     }
 }

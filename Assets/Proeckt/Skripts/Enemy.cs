@@ -7,22 +7,23 @@ using UnityEngine.AI;
 using YG;
 public class Enemy : MonoBehaviour
 {
+    public FOVArea fov;
+    public AudioClip dedd, step;
     public Transform target, point;
     public GameObject[] loot;
     public NavMeshAgent agent;
     public Image helser;
-    public Animator anim, ded;
+    public Animator  ded, domag;
     public float speed, helse;
     bool aliv = true;
     public void Damag(int damag) 
     {
+        target = Player_Muwer.rid.transform;
         if (helse > damag)
         {
-            var rid = Player_Muwer.rid.transform.position - transform.position;
-            agent.velocity = (-rid * 20);
+            domag.SetTrigger("Damag");
             helse -= damag;
             helser.fillAmount = helse / 100;
-            anim.SetTrigger("Damag");
         }
         else 
         {
@@ -30,22 +31,43 @@ public class Enemy : MonoBehaviour
             {
                 int index = Random.Range(0, 5);
                 Instantiate(loot[index], transform.position, Quaternion.identity);
-                YandexGame.savesData.record += 1;
-                YandexGame.NewLeaderboardScores("LEADER666", YandexGame.savesData.record);
                 Interface.rid.SaveGame();
                 ded.SetTrigger("Dead");
-                
+                SoundPlayer.regit.Play(dedd);
                 Destroy(gameObject,1);
                 aliv = false;
             }
         }
     }
+    public void Ontarget() 
+    {
+        target = Player_Muwer.rid.transform;
+    }
+    public void Invisee()
+    {
+        fov.active = false;
+        target = null;
+    }
+    public void Visible()
+    {
+        fov.active = true;
+    }
     public void OnPoint(Transform t)
     {
+        
         point = t;
+    }
+    public void Step()
+    {
+        if (Vector3.Distance(transform.position, Player_Muwer.rid.transform.position) < 8) 
+        {
+            SoundPlayer.regit.Play(step);
+        }
+       
     }
     private void FixedUpdate()
     {
+        ded.SetFloat("Speed", agent.velocity.magnitude/agent.speed);
         if (target != null)
         {
             agent.destination = target.position;

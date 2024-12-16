@@ -31,6 +31,7 @@ public class Interface : MonoBehaviour
     }
     public void Sum(int index, bool cursor, float scale)
     {
+        Player_Muwer.rid.muwe = Vector3.zero;
         sumer[index].Invoke();
         CursorEvent(cursor);
         Time.timeScale = scale;

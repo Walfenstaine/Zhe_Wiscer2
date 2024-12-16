@@ -14,7 +14,6 @@ public class Loader : MonoBehaviour
         YandexGame.savesData.lvl = "Scene1";
         YandexGame.savesData.coins = 30;
         YandexGame.savesData.record = 0;
-        YandexGame.savesData.svord_Helse = 100;
         YandexGame.SaveProgress();
         SceneManager.LoadScene(YandexGame.savesData.lvl);
     }

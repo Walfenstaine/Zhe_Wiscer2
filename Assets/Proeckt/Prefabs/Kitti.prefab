@@ -599,7 +599,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 2
+  m_ObstacleAvoidanceType: 0
 --- !u!114 &6139683072733967641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -612,6 +612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb2c2a68a6c1ad140b8dd36e8f816196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: a5790ee94e7813741ac4a026cfac6d9f, type: 3}
   agent: {fileID: 110471289112172008}
   anim: {fileID: 3964925559216192324}
   target: {fileID: 0}

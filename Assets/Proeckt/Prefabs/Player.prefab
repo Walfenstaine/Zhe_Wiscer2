@@ -184,6 +184,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaccc50229b31094b87772b099fbdbcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  svordHelse: 100
+  atak: 0
 --- !u!65 &298145941931840673
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -203,8 +205,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.36722854, y: 0.05074833, z: 0.27177182}
-  m_Center: {x: -0.16644749, y: 0.0055052564, z: -0.12088641}
+  m_Size: {x: 0.36722854, y: 0.05074833, z: 0.25022835}
+  m_Center: {x: -0.16644505, y: 0.005505647, z: 0.26532707}
 --- !u!54 &6165602009486642757
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -213,7 +215,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1868311987468439610}
   serializedVersion: 4
-  m_Mass: 0.0000001
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}

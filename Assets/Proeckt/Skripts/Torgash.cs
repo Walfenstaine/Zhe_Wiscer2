@@ -7,11 +7,13 @@ public class Torgash : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" || other.tag == "Invise")
         {
-            Interface.rid.Sum(4, true, 0.2f);
             Droper_Inventar.rid.torg = true;
-            Player_Muwer.rid.muwe = Vector3.zero;
+            for (int i = 0; i < Player_Muwer.rid.kitis.Count; i++)
+            {
+                Player_Muwer.rid.kitis[i].target = transform;
+            }
         }
     }
     private void OnTriggerExit(Collider other)

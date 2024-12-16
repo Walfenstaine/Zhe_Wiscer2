@@ -10,33 +10,31 @@ public class Emiter : MonoBehaviour
     public Transform[] points;
     public GameObject prefab; 
     public float spawnInterval = 2f;
-
     bool active = true;
     float timer = 0;
 
     private void OnTriggerEnter(Collider other)
     {
         
-        if (other.tag == "Neytral")
+        if (other.tag == "Player" || other.tag == "Invise")
         {
             for (int i = 0; i < enemies.Count; i++)
             {
-                enemies[i].target = Player_Muwer.rid.transform;
+                enemies[i].Visible();
             }
-            other.tag = "Player";
+
             active = false;
         }
     }
     private void OnTriggerExit(Collider other)
     {
 
-        if (other.tag == "Player")
+        if (other.tag == "Player" || other.tag == "Invise")
         {
-            for (int i = 0; i < enemies.Count; i++)
+            for (int i = 0; i < enemies.Count; i++) 
             {
-                enemies[i].target = null;
+                enemies[i].Invisee();
             }
-            other.tag = "Neytral";
             active = true;
         }
     }
@@ -48,7 +46,7 @@ public class Emiter : MonoBehaviour
         {
             enemies.Add(Instantiate(prefab.GetComponent<Enemy>()));
             int p = Random.Range(0, points.Length);
-            enemies[j].transform.position = points[p].transform.position + transform.forward;
+            enemies[j].transform.position = points[p].transform.position + transform.forward*2;
             enemies[j].point = points[p];
 
         }

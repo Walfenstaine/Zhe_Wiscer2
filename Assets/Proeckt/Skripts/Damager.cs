@@ -4,18 +4,17 @@ using UnityEngine;
 
 public class Damager : MonoBehaviour
 {
+    public Animator anim;
     bool damag = false;
-    public void Kik()
+
+    private void FixedUpdate()
     {
-        if (damag) 
+        if (damag)
         {
-            if (Player_Muwer.rid) 
-            {
-                var rid = Player_Muwer.rid.transform.position - transform.position;
-                Player_Muwer.rid.Damag(rid);
-            }
+            anim.SetTrigger("Kik");
         }
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")

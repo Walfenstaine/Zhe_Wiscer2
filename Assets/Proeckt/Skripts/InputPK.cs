@@ -25,6 +25,10 @@ public class InputPK : MonoBehaviour
     {
         Player_Muwer.rid.Kik();
     }
+    public void Kik2()
+    {
+        Player_Muwer.rid.Kik2();
+    }
 
     public void MuweX(Vector2 m) 
     {
@@ -43,6 +47,14 @@ public class InputPK : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Tab))
             {
                 Interface.rid.Sum(0, true, 0);
+            }
+            if (Input.GetKeyDown(KeyCode.I))
+            {
+                Interface.rid.Sum(4, true, 0.2f);
+            }
+            if (Input.GetKeyDown(KeyCode.Mouse1))
+            {
+                Player_Muwer.rid.Kik2();
             }
             if (Player_Muwer.rid)
             {

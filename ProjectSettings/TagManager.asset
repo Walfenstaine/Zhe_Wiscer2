@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - Neytral
   - Kitty
+  - Invise
   layers:
   - Default
   - TransparentFX
