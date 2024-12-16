@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5165883724035734631}
   - component: {fileID: 3317018733609667593}
   - component: {fileID: 167121702132008036}
-  - component: {fileID: 4236085018345383686}
+  - component: {fileID: 5876959643013248282}
   m_Layer: 0
   m_Name: Door.1
   m_TagString: Untagged
@@ -84,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4236085018345383686
+--- !u!65 &5876959643013248282
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,8 +103,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.97959995, y: 2.946093, z: 0.2826}
-  m_Center: {x: 0.48979998, y: 1.4730465, z: 0}
+  m_Size: {x: 0.58776, y: 1.7676558, z: 0.16956}
+  m_Center: {x: 0.29388, y: 0.8838279, z: 0}
 --- !u!1 &2935285820039118036
 GameObject:
   m_ObjectHideFlags: 0
@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 2628924283369877535}
   - component: {fileID: 5371265514102869663}
   - component: {fileID: 1760014785547663109}
-  - component: {fileID: 796267023385353672}
+  - component: {fileID: 5853166688030099248}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -189,7 +189,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &796267023385353672
+--- !u!65 &5853166688030099248
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -208,8 +208,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.97959995, y: 2.946093, z: 0.2826}
-  m_Center: {x: -0.48979998, y: 1.4730465, z: 0}
+  m_Size: {x: 0.58776, y: 1.7676558, z: 0.16956}
+  m_Center: {x: -0.29388, y: 0.8838279, z: 0}
 --- !u!1 &7118090298803572862
 GameObject:
   m_ObjectHideFlags: 0
