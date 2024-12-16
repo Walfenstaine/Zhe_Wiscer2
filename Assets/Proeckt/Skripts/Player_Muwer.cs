@@ -71,6 +71,7 @@ public class Player_Muwer : MonoBehaviour
                 SoundPlayer.regit.Play(atac);
                 timer = Time.time + 0.7f;
                 anim.SetTrigger("Kik");
+                invis = 0;
 
             }
 
@@ -97,6 +98,7 @@ public class Player_Muwer : MonoBehaviour
                 timer = Time.time + 0.7f;
                 SoundPlayer.regit.Play(krugAtac);
                 anim.SetTrigger("Kik2");
+                invis = 0;
 
             }
             else

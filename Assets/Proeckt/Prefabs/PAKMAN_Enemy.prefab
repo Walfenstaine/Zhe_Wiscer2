@@ -205,7 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89a5fafbd92364446a05bc74fbf4b5de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 30
+  distance: 10
   angleBound: 90
   pointsResolution: 8
   target:

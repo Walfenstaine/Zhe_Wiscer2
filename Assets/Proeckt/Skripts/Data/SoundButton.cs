@@ -12,6 +12,7 @@ public class SoundButton : MonoBehaviour
 
     public void Onclicker() 
     {
+        YandexGame.SaveProgress();
         YandexGame.savesData.soundOn = !YandexGame.savesData.soundOn;
         if (YandexGame.savesData.soundOn) 
         {
