@@ -1,5 +1,5 @@
 {
-    "idSave": 1455,
+    "idSave": 1461,
     "isFirstSession": false,
     "language": "ru",
     "promptDone": false,
@@ -8,8 +8,8 @@
     "soundOn": false,
     "lvl": "Scene1",
     "inv": [
-        11,
+        12,
         4,
-        109
+        110
     ]
 }

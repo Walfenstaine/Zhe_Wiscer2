@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    public Door dor;
     public string animName;
     public Animator anim;
     bool open = false;
@@ -14,12 +13,8 @@ public class Door : MonoBehaviour
 
         if (other.tag == "Player" || other.tag == "Invise" || other.tag == "Enemy")
         {
-            dor.open = true;
-            if (!open) 
-            {
-                anim.SetBool(animName, true);
-            }
-            
+            anim.SetBool(animName, true);
+
         }
     }
     private void OnTriggerExit(Collider other)
@@ -27,7 +22,6 @@ public class Door : MonoBehaviour
 
         if (other.tag == "Player" || other.tag == "Invise" || other.tag == "Enemy")
         {
-            dor.open = false;
             anim.SetBool(animName, false);
         }
     }
