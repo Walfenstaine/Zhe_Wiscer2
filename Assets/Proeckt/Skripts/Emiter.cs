@@ -46,7 +46,7 @@ public class Emiter : MonoBehaviour
         {
             enemies.Add(Instantiate(prefab.GetComponent<Enemy>()));
             int p = Random.Range(0, points.Length);
-            enemies[j].transform.position = points[p].transform.position + points[p].transform.forward *2;
+            enemies[j].transform.position = points[p].transform.position + points[p].transform.forward *3;
             enemies[j].point = points[p];
 
         }

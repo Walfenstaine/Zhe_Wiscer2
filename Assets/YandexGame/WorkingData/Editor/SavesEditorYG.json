@@ -1,15 +1,15 @@
 {
-    "idSave": 1472,
+    "idSave": 1526,
     "isFirstSession": false,
     "language": "ru",
     "promptDone": false,
-    "record": 19,
-    "coins": 125,
+    "record": 27,
+    "coins": 165,
     "soundOn": false,
     "lvl": "Scene1",
     "inv": [
-        13,
-        4,
-        111
+        14,
+        7,
+        118
     ]
 }
