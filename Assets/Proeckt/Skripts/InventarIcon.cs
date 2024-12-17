@@ -14,7 +14,6 @@ public class InventarIcon : MonoBehaviour
 
     private void FixedUpdate()
     {
-        img.sprite = data.icons[index_Num];
         text.text = "" + YandexGame.savesData.inv[index_Num];
     }
 }

@@ -11,6 +11,7 @@ TagManager:
   - Neytral
   - Kitty
   - Invise
+  - Wall
   layers:
   - Default
   - TransparentFX

@@ -5,21 +5,30 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
+    public Door dor;
+    public string animName;
     public Animator anim;
+    bool open = false;
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.tag == "Player" || other.tag == "Invise" || other.tag == "Enemy" || other.tag == "TNT")
+        if (other.tag == "Player" || other.tag == "Invise" || other.tag == "Enemy")
         {
-            anim.SetBool("Open", true);
+            dor.open = true;
+            if (!open) 
+            {
+                anim.SetBool(animName, true);
+            }
+            
         }
     }
     private void OnTriggerExit(Collider other)
     {
 
-        if (other.tag == "Player" || other.tag == "Invise" || other.tag == "Enemy" || other.tag == "TNT")
+        if (other.tag == "Player" || other.tag == "Invise" || other.tag == "Enemy")
         {
-            anim.SetBool("Open", false);
+            dor.open = false;
+            anim.SetBool(animName, false);
         }
     }
 }

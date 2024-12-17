@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Sword : MonoBehaviour
 {
-    public AudioClip breake;
+    public AudioClip breake, wall;
     public float svordHelse = 100;
     public float atak;
+
+    float timer = 0;
     public static Sword rid { get; set; }
     void Awake()
     {
@@ -26,26 +28,37 @@ public class Sword : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Enemy")
+        if (timer < Time.time)
         {
-            Vector3 v = new Vector3(other.transform.position.x, Player_Muwer.rid.transform.position.y, other.transform.position.z);
-            Player_Muwer.rid.transform.LookAt(v);
-            other.GetComponent<Enemy>().Damag((int)atak);
-            Debug.Log("Damag");
-            svordHelse -= atak/2;
-        }
-        else 
-        {
-            if (other.tag == "Kitty") 
+            if (other.tag == "Enemy")
             {
-                if (Player_Muwer.rid.kitis.Count < 10)
+                Vector3 v = new Vector3(other.transform.position.x, Player_Muwer.rid.transform.position.y, other.transform.position.z);
+                Player_Muwer.rid.transform.LookAt(v);
+                other.GetComponent<Enemy>().Damag((int)atak);
+                Debug.Log("Damag");
+                svordHelse -= atak / 2;
+            }
+            else
+            {
+                if (other.tag == "Kitty")
                 {
-                    SoundPlayer.regit.Play(breake);
-                    other.tag = "Neytral";
-                    other.GetComponent<Point>().Remaine();
+                    if (Player_Muwer.rid.kitis.Count < 10)
+                    {
+                        SoundPlayer.regit.Play(breake);
+                        other.tag = "Neytral";
+                        other.GetComponent<Point>().Remaine();
+                    }
+                }
+                if (other.tag == "Wall")
+                {
+
+                    timer = Time.time + 0.2f;
+                    SoundPlayer.regit.Play(wall);
+
                 }
             }
         }
+       
     }
     private void FixedUpdate()
     {
